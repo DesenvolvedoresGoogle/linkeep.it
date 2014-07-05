@@ -3,8 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #login {
-	.info_user {
-		display: none;
+	color: #A4BCC2 !important;
+	a {
+		&:hover {
+			color: #81A8B8 !important;					
+		}		
+	}
+	img{
+		height: 42px;
+		width: 42px;
+		margin: 5px;
 	}
 }
 

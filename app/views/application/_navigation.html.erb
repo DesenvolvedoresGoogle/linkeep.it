@@ -7,12 +7,12 @@
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
       </button>
-      <%= link_to 'linkeep.it', root_path, class:'navbar-brand home' %>
+      <%= link_to root_path, class:'navbar-brand home' do %>
+        <%= image_tag 'icone.png' %>
+        linkeep.it
+      <% end %>
     </div>
     <div class='collapse navbar-collapse' id='navbar-collapse'>
-      <ul class='nav navbar-nav'>
-        <li><%= link_to 'Links', links_path %></li>
-      </ul>
       <%= render 'login' %>
     </div>
   </div>
