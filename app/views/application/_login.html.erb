@@ -3,10 +3,10 @@
     <%= link_to 'Sign in with Google', user_omniauth_authorize_path(:google_oauth2)  %>
   <% else %>
     <%= image_tag current_user.avatar, class:'img-circle' %>
-    <div class='info_user'>
-	    <%= current_user.email %>
-	    <%= current_user.username %>
-	    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-	</div>    
+	  <h5><%= current_user.username %><br>
+    <small><%= current_user.email %></small></h5>
+	 <%= link_to destroy_user_session_path, method: :delete do %>
+     <span class='glyphicon glyphicon-off'></span>
+   <% end %>
   <% end %>
 </div>
