@@ -9,6 +9,14 @@
     background-color: blue;
 
     .link {
+      a {
+        display: block;
+
+        &:hover {
+          background-color: green;
+        }
+      }
+
       background-color: #efefef;
 
       .name {
