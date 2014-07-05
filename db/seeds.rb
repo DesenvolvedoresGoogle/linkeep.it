@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Link.create url: 'https://github.com/twbs/bootstrap-sass'
+Link.create url: 'https://github.com/robthefrog/treebook'
+Link.create url: 'http://patshaughnessy.net/2014/6/16/a-rule-of-thumb-for-strong-parameters'
+Link.create url: 'https://www.codeschool.com/courses/rails-testing-for-zombies'
+Link.create url: 'http://getbootstrap.com/css/'

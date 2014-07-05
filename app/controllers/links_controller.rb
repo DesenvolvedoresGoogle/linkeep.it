@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   # GET /links
