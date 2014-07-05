@@ -1,2 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#keep_calm {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h1 {
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 50px;
+    color: black;
+  }
+}
+
+.center-text {
+  text-align: center;
+}
