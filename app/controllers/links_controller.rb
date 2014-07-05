@@ -5,8 +5,13 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = links_for_user_and_tag.order created_at: :desc
-    @tags = current_user.links.all_tags.order taggings_count: :desc
+    @links = current_user.links.order created_at: :desc
+    @link_count = @links.count
+    @tags = @links.all_tags.order taggings_count: :desc
+
+    if params[:tag].present?
+      @links = @links.tagged_with params[:tag]
+    end
   end
 
   # GET /links/1

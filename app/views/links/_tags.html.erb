@@ -2,6 +2,7 @@
   <%= link_to links_url do %>
     <li>
       <span class='tag'>All links</span>
+      <span class='badge pull-right'><%= @link_count %></span>
     </li>
   <% end %>
 
@@ -9,6 +10,7 @@
     <%= link_to links_url(tag: tag.name) do %>
       <li>
         <span class='tag'><%= tag %></span>
+        <span class='badge pull-right'><%= tag.taggings_count %></span>
       </li>
     <% end %>
   <% end %>
