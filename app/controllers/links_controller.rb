@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.order(created_at: :desc)
+    @links = current_user.links.order(created_at: :desc)
   end
 
   # GET /links/1
@@ -26,6 +26,7 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(link_params)
+    @link.user = current_user
 
     respond_to do |format|
       if @link.save

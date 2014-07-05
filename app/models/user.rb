@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :links
+
   def self.from_omniauth auth
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.email = auth.info.email
