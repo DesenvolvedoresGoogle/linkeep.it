@@ -7,6 +7,12 @@
 
 <div class='row'>
   <div class='link-list col-md-9'>
+    <%= link_to 'all', links_url %>
+    |
+    <%= link_to 'unread', links_url(read: false) %>
+    |
+    <%= link_to 'read', links_url(read: true) %>
+
     <ul class='list-unstyled'>
       <% @links.each do |link| %>
         <%= render link %>

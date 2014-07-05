@@ -9,6 +9,10 @@ class LinksController < ApplicationController
     @link_count = @links.count
     @tags = @links.all_tags.order taggings_count: :desc
 
+    if params[:read].present?
+      @links = @links.where(read: params[:read] == 'true')
+    end
+
     if params[:tag].present?
       @links = @links.tagged_with params[:tag]
     end
