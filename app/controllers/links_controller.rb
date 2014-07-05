@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
 
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, only: [:show, :edit, :update, :destroy, :read, :unread]
 
   # GET /links
   # GET /links.json
@@ -22,6 +22,18 @@ class LinksController < ApplicationController
   # GET /links/new
   def new
     @link = Link.new
+  end
+
+  def read
+    @link.read = true
+    @link.save
+    redirect_to links_url, notice: 'Link marked as read succesfully.'
+  end
+
+  def unread
+    @link.read = false
+    @link.save
+    redirect_to links_url, notice: 'Link marked as unread succesfully.'
   end
 
   # GET /links/1/edit

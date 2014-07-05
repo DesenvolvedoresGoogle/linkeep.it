@@ -1,6 +1,6 @@
 <li class='link'>
   <div class='row'>
-    <div class='col-sm-11'>
+    <div class='col-sm-10'>
       <%= link_to url_with_protocol(link.url), target: :_blank do %>
         <h5 class='name'><%= link.name %></br>
         <small class='url'><%= link.url %></small></h5>
@@ -11,7 +11,13 @@
         <% end %>
       <% end %>
     </div>
-    <div class='col-sm-1 actions'>
+    <div class='col-sm-2 actions'>
+      <% if link.read? %>
+        <%= link_to 'Mark as Unread', unread_link_path(link) %>
+      <% else %>
+        <%= link_to 'Mask as Read', read_link_path(link) %>
+      <% end %>
+
       <%= link_to 'Edit', edit_link_path(link) %>
       <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
