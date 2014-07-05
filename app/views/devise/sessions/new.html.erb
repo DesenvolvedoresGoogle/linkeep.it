@@ -1,16 +1,16 @@
-<div id='keep_calm'>
-  <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="128" height="128">
-    <g>
-      <path d="m 64.000012,31.484944 28.902346,36.127871 28.902242,-36.127871 -7.22553,65.030147 -101.158086,0 L 6.1954237,31.484944 35.0977,67.612815 64.000012,31.484944 z" style="fill:#2b2b2b;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:4.33500004;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
-    </g>
-  </svg>
-  <h1>KEEP</h1>
-  <h1>CALM</h1>
-  <h1>AND</h1>
-  <h1>SAVE</h1>
-  <h1>YOUR LINKS</h1>
-</div>
+<%= link_to user_omniauth_authorize_path(:google_oauth2) do %>
+  <div id='keep_calm'>
+    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="128" height="128">
+      <g>
+        <path d="m 64.000012,31.484944 28.902346,36.127871 28.902242,-36.127871 -7.22553,65.030147 -101.158086,0 L 6.1954237,31.484944 35.0977,67.612815 64.000012,31.484944 z" style="fill:#2b2b2b;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:4.33500004;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+      </g>
+    </svg>
+    <h1>KEEP</h1>
+    <h1>CALM</h1>
+    <h1>AND</h1>
+    <h1>SAVE YOUR</h1>
+    <h1>LINKS</h1>
+  </div>
 
-<p class='center-text'>
-  <%= link_to 'Sign in with Google to continue', user_omniauth_authorize_path(:google_oauth2) %>
-</p>
+  <p class='center-text'>Sign in with Google to continue</p>
+<% end %>
