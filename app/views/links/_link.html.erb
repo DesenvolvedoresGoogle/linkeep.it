@@ -1,12 +1,13 @@
 <li class='link'>
   <div class='row'>
     <div class='col-sm-11'>
-      <%= link_to link.url, target: :_blank do %>
+      <%= link_to url_with_protocol(link.url), target: :_blank do %>
         <h3 class='name'><%= link.name %></h3>
         <h4 class='url'><%= link.url %></h4>
       <% end %>
     </div>
     <div class='col-sm-1 actions'>
+      <%= link_to 'Edit', edit_link_path(link) %>
       <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
