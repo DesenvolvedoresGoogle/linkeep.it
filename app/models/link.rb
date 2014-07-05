@@ -6,7 +6,7 @@ class Link < ActiveRecord::Base
 
   validates :name, :url, presence: true
   validates :url, format: {
-    with: /\A((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/,
+    with: /\A((https?:\/\/)?[\w-]+(\.[\w-]+)?+\.?(:\d+)?(\/.*)?)/,
     message: 'invalid link format'
   }
 
