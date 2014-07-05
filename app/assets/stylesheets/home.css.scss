@@ -2,17 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a{
+	&:hover {
+		color: #81A8B8 !important;	
+		text-decoration: none !important;
+		background: none !important;	
+	}
+	a:visited, a:link, a:active {
+		color: #A4BCC2;
+	}
+}
+
 #login {
 	color: #A4BCC2 !important;
 	a {
-		&:hover {
-			color: #81A8B8 !important;					
+		&:hover {				
 		}		
 	}
 	img{
 		height: 42px;
 		width: 42px;
 		margin: 5px;
+		float: left;
+	}
+	h5{
+		float: left;
+	}
+	span{
+
 	}
 }
 
