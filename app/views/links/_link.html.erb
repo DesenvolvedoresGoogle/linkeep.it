@@ -1,3 +1,6 @@
-<%= link_to link.url, target: :_blank do %>
-  <span class='url'><%= link.url %></span>
-<% end %>
+<li class='link'>
+  <%= link_to link.url, target: :_blank do %>
+    <h3 class='name'><%= link.name %></h3>
+    <h4 class='url'><%= link.url %></h4>
+  <% end %>
+</li>

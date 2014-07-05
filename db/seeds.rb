@@ -6,8 +6,26 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Link.create url: 'https://github.com/twbs/bootstrap-sass'
-Link.create url: 'https://github.com/robthefrog/treebook'
-Link.create url: 'http://patshaughnessy.net/2014/6/16/a-rule-of-thumb-for-strong-parameters'
-Link.create url: 'https://www.codeschool.com/courses/rails-testing-for-zombies'
-Link.create url: 'http://getbootstrap.com/css/'
+Link.create(
+  [{
+    name: 'Bootstrap Sass (github)', 
+    url: 'https://github.com/twbs/bootstrap-sass'
+  },
+  {
+    name: 'Treebook (github)', 
+    url: 'https://github.com/robthefrog/treebook'
+  },
+  {
+    name: 'A Rule of thumb for Strong Parameters', 
+    url: 'http://patshaughnessy.net/2014/6/16/a-rule-of-thumb-for-strong-parameters'
+  },
+  {
+    name: 'Rails Testing for Zombies', 
+    url: 'https://www.codeschool.com/courses/rails-testing-for-zombies'
+  },
+  {
+    name: 'Bootstrap',
+    url: 'http://getbootstrap.com/css/'
+  }]
+)
+

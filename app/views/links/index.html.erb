@@ -1,7 +1,16 @@
-<ul class='links list-unstyled'>
-  <% @links.each do |link| %>
-    <li><%= render link %></li>
-  <% end %>
-</ul>
+<h1>My Links</h1>
+
+<div class='row'>
+  <div class='link-list col-md-8'>
+    <ul class='list-unstyled'>
+      <% @links.each do |link| %>
+        <%= render link %>
+      <% end %>
+    </ul>
+  </div>
+  <div class='tags col-md-4'>
+    <h2>Tags</h2>
+  </div>
+</div>
 
 <%= link_to 'New Link', new_link_path %>

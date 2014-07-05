@@ -1,3 +1,26 @@
 // Place all the styles related to the links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.links {
+  background-color: yellow;
+
+  .link-list {
+    background-color: blue;
+
+    .link {
+      background-color: #efefef;
+
+      .name {
+        font-weight: bold;
+      }
+
+      .url {
+      }
+    }
+  }
+
+  .tags {
+    background-color: red;
+  }
+}
