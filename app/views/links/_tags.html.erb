@@ -1,0 +1,15 @@
+<ul class='list-unstyled'>
+  <%= link_to links_url do %>
+    <li>
+      <span class='tag'>All links</span>
+    </li>
+  <% end %>
+
+  <% tags.each do |tag| %>
+    <%= link_to links_url(tag: tag.name) do %>
+      <li>
+        <span class='tag'><%= tag %></span>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

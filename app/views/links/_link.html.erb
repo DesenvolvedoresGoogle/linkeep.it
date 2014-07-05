@@ -5,6 +5,11 @@
         <h3 class='name'><%= link.name %></h3>
         <h4 class='url'><%= link.url %></h4>
       <% end %>
+      <% link.tag_list.each do |tag| %>
+        <%= link_to links_url(tag: tag) do %>
+          <span class='tag'>#<%= tag %></span>
+        <% end %>
+      <% end %>
     </div>
     <div class='col-sm-1 actions'>
       <%= link_to 'Edit', edit_link_path(link) %>
