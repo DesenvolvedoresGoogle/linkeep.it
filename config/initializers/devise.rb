@@ -8,9 +8,10 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = 'dd0aeb08992554a543d06cf8565aae350c3fd30261c00790f42648b8224294adc44da025d6e21dab9fc7815ba480b03cf0185ed5b555b199171724bdf851baf5'
 
-  config.omniauth :google_oauth2, 
-    'app_id',
-    'secret'
+  APP_ID = 'app_id'
+  SECRET = 'secret'
+
+  config.omniauth :google_oauth2, APP_ID, SECRET
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
