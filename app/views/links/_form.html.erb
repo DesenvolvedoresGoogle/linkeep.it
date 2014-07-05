@@ -19,6 +19,11 @@
     <%= f.label :url %><br/>
     <%= f.text_field :url %>
   </div>
+  <div class='field'>
+    <%= f.label :tag_list, 'Tags' %><br/>
+    <%= f.text_field :tag_list %>
+    <span class='detail'>tags must be separated by , or spaces</span>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
