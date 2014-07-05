@@ -8,4 +8,17 @@ class Link < ActiveRecord::Base
     message: 'invalid link format'
   }
 
+  validate :uniqueness_per_user
+
+  private
+  def uniqueness_per_user
+    if user.links.where(name: name).exists?
+      errors.add :name, 'must be unique'
+    end
+
+    if user.links.where(url: url).exists?
+      errors.add :url, 'must be unique'
+    end
+  end
+
 end
