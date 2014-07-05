@@ -9,16 +9,23 @@
     background-color: blue;
 
     .link {
+      a {
+        display: block;
+
+        &:hover {
+          background-color: #DBE6EC;
+          color: #81A8B8;
+          text-decoration: none;
+        }
+      }
+
       background-color: #efefef;
 
       .name {
-        font-weight: bold;
+        color: #A4BCC2;
       }
 
       .url {
-      }
-
-      .actions {
       }
     }
   }

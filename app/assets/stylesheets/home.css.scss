@@ -1,3 +1,19 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#login {
+	.info_user {
+		display: none;
+	}
+}
+
+.home {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 32px;
+	color: #A4BCC2 !important;
+
+	&:hover {
+		color: #81A8B8 !important;		
+	}
+}

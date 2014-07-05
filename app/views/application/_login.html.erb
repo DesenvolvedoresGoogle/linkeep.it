@@ -2,9 +2,11 @@
   <% if !current_user %>
     <%= link_to 'Sign in with Google', user_omniauth_authorize_path(:google_oauth2)  %>
   <% else %>
-    <%= image_tag current_user.avatar %>
-    <%= current_user.email %>
-    |
-    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+    <%= image_tag current_user.avatar, class:'img-circle' %>
+    <div class='info_user'>
+	    <%= current_user.email %>
+	    <%= current_user.username %>
+	    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+	</div>    
   <% end %>
 </div>
