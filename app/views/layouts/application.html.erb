@@ -10,8 +10,10 @@
   <body class='<%= controller.controller_name %>'>
     <%= render 'navigation' %>
     <%= render 'notice' %>
-
-    <%= yield %>
+    
+    <div class='content'>
+      <%= yield %>
+    </div>
 
   </body>
 </html>

@@ -1,27 +1,31 @@
-<h1>
-  My Links -
-  <span class='add-link'>
-    <%= link_to 'add link', new_link_path %>
-  </span>
-</h1>
-
-<div class='row'>
-  <div class='link-list col-md-9'>
-    <%= link_to 'all', links_url %>
-    |
-    <%= link_to 'unread', links_url(read: false) %>
-    |
-    <%= link_to 'read', links_url(read: true) %>
-
-    <ul class='list-unstyled'>
-      <% @links.each do |link| %>
-        <%= render link %>
-      <% end %>
-    </ul>
+<div class='panel panel-default'>
+  <div class="panel-heading">
+    My Links 
+    <%= link_to new_link_path do %>
+      <span class='glyphicon glyphicon-plus-sign'></span>
+    <% end %>
+    
   </div>
-  <div class='tags col-md-2'>
-    <h2>Tags</h2>
-    <%= render 'tags', tags: @tags %>
+  <div class="panel-body">
+    <div class='row'>
+      <div class='link-list col-md-9'>
+        <%= link_to 'all', links_url %>
+        |
+        <%= link_to 'unread', links_url(read: false) %>
+        |
+        <%= link_to 'read', links_url(read: true) %>
+
+        <ul class='list-unstyled'>
+          <% @links.each do |link| %>
+            <%= render link %>
+          <% end %>
+        </ul>
+      </div>
+      <div class='tags col-md-2'>
+        <h2>Tags</h2>
+        <%= render 'tags', tags: @tags %>
+      </div>
+    </div>
   </div>
 </div>
 
