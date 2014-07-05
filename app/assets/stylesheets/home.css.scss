@@ -15,21 +15,20 @@ a{
 
 #login {
 	color: #A4BCC2 !important;
-	a {
-		&:hover {				
-		}		
-	}
+	line-height: 52px;
+
 	img{
-		height: 42px;
-		width: 42px;
-		margin: 5px;
+		height: 3.2em;
+		width: 3.2em;
+		margin: 0.5em;
 		float: left;
 	}
 	h5{
 		float: left;
 	}
 	span{
-
+		font-size: 1.4em;
+		padding-left: 6px;
 	}
 }
 
