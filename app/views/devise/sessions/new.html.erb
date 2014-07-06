@@ -1,14 +1,16 @@
-<%= link_to user_omniauth_authorize_path(:google_oauth2) do %>
-  <div id='keep_calm'>
-    <span class='glyphicon glyphicon-link' style='font-size: 128px'></span>
-    <h1>KEEP</h1>
-    <h1>CALM</h1>
-    <h1>AND</h1>
-    <h1>SAVE YOUR</h1>
-    <h1>LINKS</h1>
-  </div>
+<div class='button_link'>
+  <%= link_to user_omniauth_authorize_path(:google_oauth2) do %>
+    <div id='keep_calm'>
+      <span class='glyphicon glyphicon-link' style='font-size: 128px'></span>
+      <h1>KEEP</h1>
+      <h1>CALM</h1>
+      <h1>AND</h1>
+      <h1>SAVE YOUR</h1>
+      <h1>LINKS</h1>
+    </div>
 
-  <p class='center-text'>
-    <%= image_tag("google-signin.png", :alt => "Sign in with Google to continue") %>
-  </p>
-<% end %>
+    <p class='center-text'>
+      <%= image_tag("google-signin.png", :alt => "Sign in with Google to continue") %>
+    </p>
+  <% end %>
+</div>

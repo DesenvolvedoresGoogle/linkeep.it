@@ -1,4 +1,4 @@
-<div id='login' class='navbar-right'>
+<div id='login' class='navbar-right button_link'>
   <% if !current_user %>
     <%= link_to user_omniauth_authorize_path(:google_oauth2) do %>
       <%= image_tag("google-signin.png", :alt => "Sing in with Google") %>
