@@ -10,8 +10,11 @@
     </div>
     <div class="panel-body">
       <div class='link-list'>
+        <% if params[:tag].present? %>
+          <h5>Filtered by tag: <strong><%= params[:tag] %></strong></h5>
+        <% end %>
         <ul class="nav nav-pills">
-          <% links_filters.each do |filter| %>
+          <% links_filters.each do |filter| %>         
             <% active = '' %>
             <% if current_page?(filter[:url]) || #gambssss
                   (current_page?(root_path) && filter == links_filters.first) %>
