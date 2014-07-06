@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140705234621) do
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "user_id"
-    t.boolean  "read"
+    t.boolean  "read",       default: false, null: false
   end
 
   add_index "links", ["user_id"], name: "index_links_on_user_id"

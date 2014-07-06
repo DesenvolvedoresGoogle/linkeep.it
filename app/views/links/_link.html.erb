@@ -5,11 +5,11 @@
 <% end %>
   <div class='actions pull-right'>
     <% if link.read? %>
-      <%= link_to unread_link_path(link) do %>
+      <%= link_to mark_unread_link_path(link) do %>
         <span title='Mask as Unread' class='glyphicon glyphicon-folder-close'></spans>
       <% end %>
     <% else %>
-      <%= link_to read_link_path(link) do %>
+      <%= link_to mark_read_link_path(link) do %>
         <span title='Mask as Read' class='glyphicon glyphicon-folder-open'></spans>
       <% end %>
     <% end %>

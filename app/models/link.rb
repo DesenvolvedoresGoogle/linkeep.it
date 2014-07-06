@@ -10,4 +10,8 @@ class Link < ActiveRecord::Base
     message: 'invalid link format'
   }
 
+  def unread?
+    !read?
+  end
+
 end

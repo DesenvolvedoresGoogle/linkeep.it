@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :links do
     member do
+      get 'mark_read'
+      get 'mark_unread'
+    end
+    collection do
       get 'read'
       get 'unread'
     end

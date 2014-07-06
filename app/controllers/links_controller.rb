@@ -1,21 +1,23 @@
 class LinksController < ApplicationController
 
-  before_action :set_link, only: [:show, :edit, :update, :destroy, :read, :unread]
+  before_action :links_and_tags, only: [:index, :read, :unread]
 
-  # GET /links
-  # GET /links.json
+  before_action :set_link, only: [:show, :edit, :update, :destroy, :mark_read, :mark_unread]
+
   def index
-    @links = current_user.links.order created_at: :desc
-    @link_count = @links.count
-    @tags = @links.all_tags.order taggings_count: :desc
+    @links = links_by_tag params[:tag]
+  end
 
-    if params[:read].present?
-      @links = @links.where(read: params[:read] == 'true')
-    end
+  def read
+    @links = @links.where(read: true)
+    @links = links_by_tag params[:tag]
+    render 'index'
+  end
 
-    if params[:tag].present?
-      @links = @links.tagged_with params[:tag]
-    end
+  def unread
+    @links = @links.where(read: false)
+    @links = links_by_tag params[:tag]
+    render 'index'
   end
 
   # GET /links/1
@@ -28,13 +30,13 @@ class LinksController < ApplicationController
     @link = Link.new
   end
 
-  def read
+  def mark_read
     @link.read = true
     @link.save
     redirect_to links_url, notice: 'Link marked as read succesfully.'
   end
 
-  def unread
+  def mark_unread
     @link.read = false
     @link.save
     redirect_to links_url, notice: 'Link marked as unread succesfully.'
@@ -86,23 +88,34 @@ class LinksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_link
-      @link = Link.find(params[:id])
+  def links_and_tags
+    @links = current_user.links.order created_at: :desc
+    @link_count = @links.count
+    @tags = @links.all_tags.order taggings_count: :desc
+  end
+
+  def links_by_tag tag_param
+    if tag_param.present?
+      @links = @links.tagged_with tag_param
+    end
+    @links
+  end
+
+  def set_link
+    @link = Link.find(params[:id])
+  end
+
+  def link_params
+    params.require(:link).permit(:name, :url, :tag_list)
+  end
+
+  def links_for_user_and_tag
+    links = current_user.links
+
+    if params[:tag].present?
+      links = links.tagged_with params[:tag]
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def link_params
-      params.require(:link).permit(:name, :url, :tag_list)
-    end
-
-    def links_for_user_and_tag
-      links = current_user.links
-
-      if params[:tag].present?
-        links = links.tagged_with params[:tag]
-      end
-
-      links
-    end
+    links
+  end
 end
