@@ -1,12 +1,16 @@
-<li class='list-group-item'>
+<% if link.read? %>
+  <li class='list-group-item'>
+<% else %>
+  <li class='list-group-item disabled'>
+<% end %>
   <div class='actions pull-right'>
     <% if link.read? %>
       <%= link_to unread_link_path(link) do %>
-        <span title='Mask as Unread' class='glyphicon glyphicon-eye-open'></spans>
+        <span title='Mask as Unread' class='glyphicon glyphicon-folder-open'></spans>
       <% end %>
     <% else %>
       <%= link_to read_link_path(link) do %>
-        <span title='Mask as Read' class='glyphicon glyphicon-eye-close'></spans>
+        <span title='Mask as Read' class='glyphicon glyphicon-folder-close'></spans>
       <% end %>
     <% end %>
 
@@ -17,13 +21,28 @@
       <span class='glyphicon glyphicon-remove'></span>
     <% end %>
   </div>
-  <%= link_to url_with_protocol(link.url), target: :_blank do %>
-    <h5 class='name'><%= link.name %></br>
-    <small class='url'><%= link.url %></small></h5>
-  <% end %>
-  <% link.tag_list.each do |tag| %>
-    <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
-      <span class='tag'>#<%= tag %></span>
+
+
+  <% if link.read? %>
+    <%= link_to url_with_protocol(link.url), target: :_blank do %>
+      <h5 class='name'><strong><%= link.name %></strong></br>
+      <small class='url'><strong><%= link.url %></strong></small></h5>
+    <% end %>
+    <% link.tag_list.each do |tag| %>
+      <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
+        <span class='tag'>#<%= tag %></span>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= link_to url_with_protocol(link.url), target: :_blank do %>
+      <h5 class='name'><%= link.name %></br>
+      <small class='url'><%= link.url %></small></h5>
+    <% end %>
+    <% link.tag_list.each do |tag| %>
+      <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
+        <span class='tag'>#<%= tag %></span>
+      <% end %>
     <% end %>
   <% end %>
+
 </li>
