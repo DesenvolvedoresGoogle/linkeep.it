@@ -28,10 +28,17 @@
         padding: 5px 8px;
       }
 
-      #header a {
+      #header a#title {
         font-family: 'Open Sans Condensed', sans-serif;
         font-size: 28px;
         color: #a4bcc2;
+      }
+
+      #header a#site {
+        float: right;
+        color: #a4bcc2;
+        line-height: 44px;
+        font-size: 14px;
       }
 
       #add-link {
@@ -84,7 +91,8 @@
   </head>
   <body>
     <div id='header'>
-      <a href='http://linkeep.it'>linkeep.it</a>
+      <a id='title' href='http://linkeep.it'>linkeep.it</a>
+      <a id='site' href='http://linkeep.it'>view my links</a>
     </div>
     <div id='add-link'>
       <form>
