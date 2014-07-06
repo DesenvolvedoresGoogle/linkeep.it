@@ -3,19 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .links {
-  background-color: yellow;
+  background-color: #DBE6EC;
 
   .link-list {
-    background-color: blue;
 
     .link {
       a {
-        display: block;
-
-        &:hover {
-          background-color: #DBE6EC;
-          color: #81A8B8;
-          text-decoration: none;
+        padding: 2px;
+        background-color: #E8F3F8;
+        
+        &:hover{
         }
       }
 
@@ -27,6 +24,9 @@
 
       .url {
       }
+    }
+    delete:hover{
+      color: red;
     }
   }
 
