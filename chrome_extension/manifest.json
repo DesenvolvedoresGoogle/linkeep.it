@@ -18,6 +18,7 @@
   "background": {
     "scripts": [
       "log.js",
+      "data.js",
       "linkeep.js",
       "urls.js",
       "background.js"

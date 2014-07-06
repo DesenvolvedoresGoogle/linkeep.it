@@ -5,13 +5,52 @@
     <style>
       body {
         min-width: 300px;
-        min-height: 300px;
         overflow-x: hidden;
+        background-color: #fafcfa;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      
+      a {
+        text-decoration: none;
+        background: none;
+        outline: none;
+      }
+
+      #header {
+        background-color: #f8f8f8;
+        min-height: 40px;
+        border-bottom: 1px solid #e7e7e7;
+        margin-bottom: 20px;
+        padding: 0 5px;
+      }
+
+      #header a {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 28px;
+        color: #a4bcc2;
       }
     </style>
     <script src="popup.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" media="screen" rel="stylesheet">
   </head>
   <body>
+    <div id='header'>
+      <a href='http://linkeep.it'>linkeep.it</a>
+    </div>
+    <div id='add-link'>
+      <h1>Add new link:</h1>
+      Name:
+      Url: (get from current tab)
+      Tags: allow user to add
+    </div>
+    <div id='not-signed-in'>
+      Keep calm and save your links;
+      Link para se logar na app
+    </div>
   </body>
 </html>
 
