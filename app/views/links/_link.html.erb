@@ -1,5 +1,8 @@
-
-<li class='list-group-item'>
+<% if link.read?%>
+  <li class='list-group-item disabled'>
+<% else %>
+  <li class='list-group-item'>
+<% end %>  
   <div class='actions pull-right'>
     <% if link.read? %>
       <%= link_to 'Mask as Unread', mark_unread_link_path(link) %>
