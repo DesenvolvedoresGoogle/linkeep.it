@@ -1,12 +1,13 @@
 <div class='col-md-9'>
   <div class='panel panel-default'>
     <div class="panel-heading">
-      My Links 
-      <%= link_to new_link_path do %>
-        <span class='glyphicon glyphicon-plus-sign'></span>
-      <% end %>        
+      <div class='actions pull-right'>
+        <%= link_to new_link_path do %>
+          <span class='glyphicon glyphicon-plus-sign'></span>
+        <% end %>        
+      </div>
+      My Links
     </div>
-
     <div class="panel-body">
       <div class='link-list'>
         <ul class="nav nav-pills">
