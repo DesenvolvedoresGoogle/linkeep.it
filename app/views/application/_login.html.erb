@@ -1,15 +1,16 @@
-<div id='login' class='navbar-right button_link'>
+<div id='login' class="nav navbar-nav navbar-right">
   <% if !current_user %>
     <%= link_to user_omniauth_authorize_path(:google_oauth2) do %>
       <%= image_tag("google-signin.png", :alt => "Sing in with Google") %>
-
     <% end %>
   <% else %>
     <%= image_tag current_user.avatar, class:'img-circle' %>
 	  <h5><%= current_user.username %><br>
     <small><%= current_user.email %></small></h5>
-	 <%= link_to destroy_user_session_path, method: :delete do %>
+	 <li> 
+    <%= link_to destroy_user_session_path, method: :delete do %>
      <span class='glyphicon glyphicon-off'></span>
-   <% end %>
+    <% end %>
+   <li>
   <% end %>
 </div>
