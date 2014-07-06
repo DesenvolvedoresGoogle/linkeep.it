@@ -1,3 +1,5 @@
+var bg = chrome.extension.getBackgroundPage();
+
 var currentTab = function(callback) {
   chrome.tabs.query({
     'active': true,
@@ -26,7 +28,8 @@ var newLinkSubmitted = function() {
   link['url'] = document.getElementById('link_url').value;
   link['tags'] = document.getElementById('link_tags').value;
 
-  post(api + '/v1/links', object, function() {
+
+  bg.post(bg.api + '/v1/links', link, function() {
     alert('created!');
   });
 
