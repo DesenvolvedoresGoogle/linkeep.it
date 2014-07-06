@@ -1,18 +1,20 @@
 <ul class='navbar navbar-default' role='navigation'>
   <div class='container-fluid'>
-    <div class='navbar-header'>
-      <button type='button' class='navbar-toggle' data-toggle'collapse' data-target='#navbar-collapse'>
-        <span class='sr-only'>Toggle navigation</span>
-        <span class='icon-bar'></span>
-        <span class='icon-bar'></span>
-        <span class='icon-bar'></span>
-      </button>
-      <%= link_to root_path, class:'navbar-brand home' do %>
-        linkeep.it
-      <% end %>
-    </div>
-    <div class='collapse navbar-collapse' id='navbar-collapse'>
-      <%= render 'login' %>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class='navbar-header'>
+        <button type='button' class='navbar-toggle' data-toggle'collapse' data-target='#navbar-collapse'>
+          <span class='sr-only'>Toggle navigation</span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <%= link_to root_path, class:'navbar-brand home' do %>
+          linkeep.it
+        <% end %>
+      </div>
+      <div class='collapse navbar-collapse' id='navbar-collapse'>
+        <%= render 'login' %>
+      </div>
     </div>
   </div>
 </ul>

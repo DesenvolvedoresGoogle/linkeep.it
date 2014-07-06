@@ -1,29 +1,29 @@
 <li class='list-group-item'>
-      <%= link_to url_with_protocol(link.url), target: :_blank do %>
-        <h5 class='name'><%= link.name %></br>
-        <small class='url'><%= link.url %></small></h5>
+  <div class='actions pull-right'>
+    <% if link.read? %>
+      <%= link_to unread_link_path(link) do %>
+        <span title='Mask as Unread' class='glyphicon glyphicon-eye-open'></spans>
       <% end %>
-      <% link.tag_list.each do |tag| %>
-        <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
-          <span class='tag'>#<%= tag %></span>
-        <% end %>
+    <% else %>
+      <%= link_to read_link_path(link) do %>
+        <span title='Mask as Read' class='glyphicon glyphicon-eye-close'></spans>
       <% end %>
-      <div class='actions pull-right'>
-      <% if link.read? %>
-        <%= link_to unread_link_path(link) do %>
-          <span title='Mask as Unread' class='glyphicon glyphicon-eye-open'></spans>
-        <% end %>
-      <% else %>
-        <%= link_to read_link_path(link) do %>
-          <span title='Mask as Read' class='glyphicon glyphicon-eye-close'></spans>
-        <% end %>
-      <% end %>
+    <% end %>
 
-      <%= link_to edit_link_path(link) do %>
-        <span class='glyphicon glyphicon-pencil'></span>
-      <% end %>
-      <%= link_to link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
-        <span class='glyphicon glyphicon-remove'></span>
-      <% end %>
-    </div>
+    <%= link_to edit_link_path(link) do %>
+      <span class='glyphicon glyphicon-pencil'></span>
+    <% end %>
+    <%= link_to link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
+      <span class='glyphicon glyphicon-remove'></span>
+    <% end %>
+  </div>
+  <%= link_to url_with_protocol(link.url), target: :_blank do %>
+    <h5 class='name'><%= link.name %></br>
+    <small class='url'><%= link.url %></small></h5>
+  <% end %>
+  <% link.tag_list.each do |tag| %>
+    <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
+      <span class='tag'>#<%= tag %></span>
+    <% end %>
+  <% end %>
 </li>
