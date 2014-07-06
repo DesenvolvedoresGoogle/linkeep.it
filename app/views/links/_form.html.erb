@@ -32,12 +32,13 @@
             <p class="help-block">tags must be separated by , or spaces.</p>
           </div>
           <div class="actions">
-            <%= f.submit %>
+            <%= f.submit class:'btn btn-default'%>
+
+            <%= link_to 'Back', links_path, class:'btn btn-default' %>
           </div>
         <% end %>
       </div>
 
-      <%= link_to 'Back', links_path %>
     </div>
   </div>
 </div>
