@@ -24,5 +24,24 @@ var get = function(url, callback) {
     }
   };
   xhr.send();
-  
 };
+
+
+var post = function(url, object, callback) {
+  object['token'] = localStorage.access_token;
+  
+  log('POST: ' + url);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('X-User-Agent', userAgent);
+  xhr.setRequestHeader("Content-type","application/json");
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status == 401) signOut();
+      callback(xhr.status, xhr.responseText);
+    }
+  }
+  xhr.send(JSON.stringify(object));
+}
