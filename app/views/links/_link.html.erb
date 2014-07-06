@@ -1,6 +1,4 @@
 <li class='list-group-item'>
-  <div class='row'>
-    <div class='col-sm-10'>
       <%= link_to url_with_protocol(link.url), target: :_blank do %>
         <h5 class='name'><%= link.name %></br>
         <small class='url'><%= link.url %></small></h5>
@@ -10,12 +8,15 @@
           <span class='tag'>#<%= tag %></span>
         <% end %>
       <% end %>
-    </div>
-    <div class='col-sm-2 actions'>
+      <div class='actions pull-right'>
       <% if link.read? %>
-        <%= link_to 'Mark as Unread', unread_link_path(link) %>
+        <%= link_to unread_link_path(link) do %>
+          <span title='Mask as Unread' class='glyphicon glyphicon-eye-open'></spans>
+        <% end %>
       <% else %>
-        <%= link_to 'Mask as Read', read_link_path(link) %>
+        <%= link_to read_link_path(link) do %>
+          <span title='Mask as Read' class='glyphicon glyphicon-eye-close'></spans>
+        <% end %>
       <% end %>
 
       <%= link_to edit_link_path(link) do %>
@@ -25,5 +26,4 @@
         <span class='glyphicon glyphicon-remove'></span>
       <% end %>
     </div>
-  </div>
 </li>
