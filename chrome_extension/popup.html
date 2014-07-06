@@ -5,13 +5,108 @@
     <style>
       body {
         min-width: 300px;
-        min-height: 300px;
         overflow-x: hidden;
+        background-color: #dbe6ec;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+        font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+      }
+      
+      a {
+        text-decoration: none;
+        background: none;
+        outline: none;
+      }
+
+      #header {
+        background-color: #f8f8f8;
+        min-height: 50px;
+        border-bottom: 1px solid #e7e7e7;
+        padding: 5px 8px;
+      }
+
+      #header a {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 28px;
+        color: #a4bcc2;
+      }
+
+      #add-link {
+        margin: 3px;
+        background-color: #cbd6dc;;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: 1px solid #eaeaea;
+      }
+
+      #add-link input {
+        margin: 2%;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+      }
+
+      #add-link input[type=text] {
+        width: 96%;
+        font-size: 17px;
+        line-height: 25px;
+        padding: 6px 3px;
+        background-color: #fbfbfb;
+        border: 1px dotted #e8e8e8;
+      }
+
+      #add-link input[type=submit] {
+        float: right;
+        border: none;
+        padding: 6px 12px;
+        font-size: 20px;
+        background-color: #378B3E;
+        color: white;
+        margin-bottom: 4%;
+      }
+
+      #add-link input[type=submit]:hover {
+        background-color: #57ab5e;
+      }
+
+      #not-signed-in {
+        display: none;
+      }
+
+      .clear {
+        clear: both;
       }
     </style>
     <script src="popup.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" media="screen" rel="stylesheet">
   </head>
   <body>
+    <div id='header'>
+      <a href='http://linkeep.it'>linkeep.it</a>
+    </div>
+    <div id='add-link'>
+      <form>
+        <div>
+          <input id='link_name' name='link[name]' type='text' placeholder='Name' />
+        </div>
+        <div>
+          <input id='link_url' name='link[url]' type='text' placeholder='Url' />
+        </div>
+        <div>
+          <input id='link_tags' name='link[tags]' type='text' placeholder='Tags' />
+        </div>
+        <div class='actions'>
+          <input name='commit' type='submit' value='Save Link' />
+        </div>
+        <div class='clear'></div>
+      </form>
+    </div>
+    <div id='not-signed-in'>
+      Keep calm and save your links;
+      Link para se logar na app
+    </div>
   </body>
 </html>
 
