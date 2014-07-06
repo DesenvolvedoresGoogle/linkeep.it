@@ -24,6 +24,20 @@
 	}
 }
 
+.alert-info{
+	color: #31708f !important;
+	border-color: #bce8f1 !important;
+}
+
+.alert-danger{
+	color: #a94442 !important;
+	border-color: #ebccd1 !important;
+}
+
+.alert{
+	margin: 0px 20px 20px;
+}
+
 .glyphicon {
 	font-size: 1.4em;
 }

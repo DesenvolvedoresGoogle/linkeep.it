@@ -5,24 +5,13 @@
 <% end %>
   <div class='actions pull-right'>
     <% if link.read? %>
-      <%= link_to mark_unread_link_path(link) do %>
-        <span title='Mask as Unread' class='glyphicon glyphicon-folder-close'></spans>
-      <% end %>
+      <%= link_to 'Mask as unread', mark_unread_link_path(link) %>
     <% else %>
-      <%= link_to mark_read_link_path(link) do %>
-        <span title='Mask as Read' class='glyphicon glyphicon-folder-open'></spans>
-      <% end %>
-    <% end %>
-
-    <%= link_to edit_link_path(link) do %>
-      <span class='glyphicon glyphicon-pencil'></span>
-    <% end %>
-    <%= link_to link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
-      <span class='glyphicon glyphicon-remove'></span>
-    <% end %>
+      <%= link_to 'Mask as Read', mark_read_link_path(link) %>
+    <% end %><br/>
+    <%= link_to 'Edit', edit_link_path(link) %><br/>
+    <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
-
-
   <% if link.read? %>
     <%= link_to url_with_protocol(link.url), target: :_blank do %>
       <h5 class='name'><strong><%= link.name %></strong></br>

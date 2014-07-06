@@ -1,2 +1,6 @@
-<p id='notice'><%= notice %></p>
-<p id='alert'><%= alert %></p>
+<% if !(notice.nil?) %>
+	<div class="alert alert-info" role="alert" id='notice'><%= notice %></div>
+<% end %>
+<% if !(alert.nil?) %>
+	<div class="alert alert-danger" role="alert" id='alert'><%= alert %></div>
+<% end %>
