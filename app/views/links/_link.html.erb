@@ -1,37 +1,21 @@
-<% if link.read? %>
-  <li class='list-group-item'>
-<% else %>
-  <li class='list-group-item disabled'>
-<% end %>
+
+<li class='list-group-item'>
   <div class='actions pull-right'>
     <% if link.read? %>
-      <%= link_to 'Mask as unread', mark_unread_link_path(link) %>
+      <%= link_to 'Mask as Unread', mark_unread_link_path(link) %>
     <% else %>
       <%= link_to 'Mask as Read', mark_read_link_path(link) %>
     <% end %><br/>
     <%= link_to 'Edit', edit_link_path(link) %><br/>
     <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
-  <% if link.read? %>
-    <%= link_to url_with_protocol(link.url), target: :_blank do %>
-      <h5 class='name'><strong><%= link.name %></strong></br>
-      <small class='url'><strong><%= link.url %></strong></small></h5>
-    <% end %>
-    <% link.tag_list.each do |tag| %>
-      <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
-        <span class='tag'>#<%= tag %></span>
-      <% end %>
-    <% end %>
-  <% else %>
-    <%= link_to url_with_protocol(link.url), target: :_blank do %>
-      <h5 class='name'><%= link.name %></br>
-      <small class='url'><%= link.url %></small></h5>
-    <% end %>
-    <% link.tag_list.each do |tag| %>
-      <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
-        <span class='tag'>#<%= tag %></span>
-      <% end %>
+  <%= link_to url_with_protocol(link.url), target: :_blank do %>
+    <h5 class='name'><%= link.name %></br>
+    <small class='url'><%= link.url %></small></h5>
+  <% end %>
+  <% link.tag_list.each do |tag| %>
+    <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
+      <span class='tag'>#<%= tag %></span>
     <% end %>
   <% end %>
-
 </li>
