@@ -1,17 +1,13 @@
-<ul class='list-unstyled'>
-  <%= link_to links_url do %>
-    <li>
-      <span class='tag'>All links</span>
-      <span class='badge pull-right'><%= @link_count %></span>
-    </li>
+<div class='list-group'>
+  <%= link_to links_url, class:'list-group-item' do %>
+    <strong> <span class='tag'>All links</span> </strong>
+    <span class='badge'><%= @link_count %></span>
   <% end %>
 
   <% tags.each do |tag| %>
-    <%= link_to links_url(tag: tag.name) do %>
-      <li>
-        <span class='tag'><%= tag %></span>
-        <span class='badge pull-right'><%= tag.taggings_count %></span>
-      </li>
+    <%= link_to links_url(tag: tag.name), class:'list-group-item' do %>
+      <span class='tag'><%= tag %></span>
+      <span class='badge'><%= tag.taggings_count %></span>
     <% end %>
   <% end %>
-</ul>
+</div>
