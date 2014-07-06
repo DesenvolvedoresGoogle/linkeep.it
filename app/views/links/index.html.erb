@@ -12,7 +12,12 @@
       <div class='link-list'>
         <ul class="nav nav-pills">
           <% links_filters.each do |filter| %>
-            <li class='<%= current_page?(filter[:url]) ? 'active' : '' %>'><%= link_to filter[:title], filter[:url] %></li>
+            <% active = '' %>
+            <% if current_page?(filter[:url]) || #gambssss
+                  (current_page?(root_path) && filter == links_filters.first) %>
+              <% active = 'active' %>
+            <% end %>
+            <li class='<%= active %>'><%= link_to filter[:title], filter[:url] %></li>
           <% end %>
         </ul>
         <span class='space'> </span>
