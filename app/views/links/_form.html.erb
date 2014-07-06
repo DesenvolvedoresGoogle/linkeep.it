@@ -20,15 +20,15 @@
 
           <div class='field form-group'>
             <%= f.label :name %><br/>
-            <%= f.text_field :name %>
+            <%= f.text_field :name, class: 'form-control' %>
           </div>
           <div class="field form-group">
             <%= f.label :url %><br/>
-            <%= f.text_field :url %>
+            <%= f.text_field :url, class: 'form-control' %>
           </div>
           <div class='field form-group'>
             <%= f.label :tag_list, 'Tags' %><br/>
-            <%= f.text_field :tag_list %>
+            <%= f.text_field :tag_list, class: 'form-control' %>
             <p class="help-block">tags must be separated by , or spaces.</p>
           </div>
           <div class="actions">
