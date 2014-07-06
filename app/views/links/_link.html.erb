@@ -1,4 +1,4 @@
-<li class='link'>
+<li class='list-group-item'>
   <div class='row'>
     <div class='col-sm-10'>
       <%= link_to url_with_protocol(link.url), target: :_blank do %>
@@ -6,7 +6,7 @@
         <small class='url'><%= link.url %></small></h5>
       <% end %>
       <% link.tag_list.each do |tag| %>
-        <%= link_to links_url(tag: tag) do %>
+        <%= link_to links_url(tag: tag), class:'btn btn-xs btn-default' do %>
           <span class='tag'>#<%= tag %></span>
         <% end %>
       <% end %>
@@ -18,8 +18,12 @@
         <%= link_to 'Mask as Read', read_link_path(link) %>
       <% end %>
 
-      <%= link_to 'Edit', edit_link_path(link) %>
-      <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to edit_link_path(link) do %>
+        <span class='glyphicon glyphicon-pencil'></span>
+      <% end %>
+      <%= link_to link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
+        <span class='glyphicon glyphicon-remove'></span>
+      <% end %>
     </div>
   </div>
 </li>

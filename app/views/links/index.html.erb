@@ -1,31 +1,41 @@
-<div class='panel panel-default'>
-  <div class="panel-heading">
-    My Links 
-    <%= link_to new_link_path do %>
-      <span class='glyphicon glyphicon-plus-sign'></span>
-    <% end %>
-    
-  </div>
-  <div class="panel-body">
-    <div class='row'>
-      <div class='link-list col-md-9'>
-        <%= link_to 'all', links_url %>
-        |
-        <%= link_to 'unread', links_url(read: false) %>
-        |
-        <%= link_to 'read', links_url(read: true) %>
-
-        <ul class='list-unstyled'>
-          <% @links.each do |link| %>
-            <%= render link %>
-          <% end %>
-        </ul>
+<div class='row'>
+  <div class='col-md-8'>
+    <div class='panel panel-default'>
+      <div class="panel-heading">
+        My Links 
+        <%= link_to new_link_path do %>
+          <span class='glyphicon glyphicon-plus-sign'></span>
+        <% end %>        
       </div>
-      <div class='tags col-md-2'>
-        <h2>Tags</h2>
-        <%= render 'tags', tags: @tags %>
+
+      <div class="panel-body">
+        <div class='link-list'>
+          <ul class="nav nav-pills">
+            <li class="active"><%= link_to 'all', links_url %></li>
+            <li><%= link_to 'unread', links_url(read: false) %></li>
+            <li><%= link_to 'read', links_url(read: true) %></li>
+          </ul>
+          
+          <ul class='list-group'>
+            <% @links.each do |link| %>
+              <%= render link %>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <div class='col-md-4'>
+    <div class='panel panel-default'>
+      <div class='panel-heading'>
+        Tags
+      </div>
+      <div class='panel-body'>
+          <div class='tags col-md-2'>
+            <%= render 'tags', tags: @tags %>
+          </div>
+      </div>  
+    </div>  
+  </div>
+</div>
