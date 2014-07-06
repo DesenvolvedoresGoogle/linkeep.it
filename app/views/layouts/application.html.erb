@@ -11,7 +11,11 @@
   </head>
   <body class='<%= controller.controller_name %>'>
     <%= render 'navigation' %>
-    <%= render 'notice' %>
+
+    <% unless current_page? new_user_session_path %>
+      <%= render 'notice' %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

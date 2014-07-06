@@ -10,7 +10,7 @@
       <%= link_to 'Mask as Read', mark_read_link_path(link) %>
     <% end %><br/>
     <%= link_to 'Edit', edit_link_path(link) %><br/>
-    <%= link_to 'Delete', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
   <%= link_to url_with_protocol(link.url), target: :_blank do %>
     <h5 class='name'><%= link.name %></br>
