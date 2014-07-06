@@ -78,6 +78,29 @@
         background-color: #57ab5e;
       }
 
+      #saved-succesfully {
+        position: absolute;
+        width: 200px;
+        height: 120px;
+        left: 50px;
+        top: 70px;
+        background: rgba(50, 50, 50, 0.8);
+        border: 2px solid rgba(200, 200, 200, 0.3);
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        color: white;
+        opacity: 0;
+        display: none;
+
+        transition: opacity 0.3s;
+      }
+
+      #saved-succesfully h1 {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 28px;
+        text-align: center;
+      }
+
       #not-signed-in {
         display: none;
       }
@@ -110,6 +133,12 @@
         </div>
         <div class='clear'></div>
       </form>
+    </div>
+    <div id='saved-succesfully'>
+      <h1>
+        Link saved<br/>
+        succesfully!
+      </h1>
     </div>
     <div id='not-signed-in'>
       Keep calm and save your links;

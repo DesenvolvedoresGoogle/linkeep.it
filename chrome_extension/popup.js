@@ -30,7 +30,13 @@ var newLinkSubmitted = function() {
 
 
   bg.post(bg.api + '/v1/links', link, function() {
-    alert('created!');
+    var saved = document.getElementById('saved-succesfully');
+    saved.style.display = 'block';
+    saved.style.opacity = '1.0';
+
+    setTimeout(function() {
+      window.close();
+    }, 1300);
   });
 
   return false;
