@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <div class='actions pull-right button_link'>
         <%= link_to new_link_path do %>
-          <span class='glyphicon glyphicon-plus-sign'></span>
+          Add <span class='glyphicon glyphicon-link'></span>
         <% end %>        
       </div>
       My Links
@@ -11,7 +11,11 @@
     <div class="panel-body">
       <div class='link-list'>
         <% if params[:tag].present? %>
-          <h5>Filtered by tag: <strong><%= params[:tag] %></strong></h5>
+          <h5>Filtered by tag: 
+            <%= link_to links_url, class:'btn btn-xs btn-default' do %>
+              <%= params[:tag] %> ×
+            <% end%>
+          </h5>
         <% end %>
         <ul class="nav nav-pills">
           <% links_filters.each do |filter| %>         
