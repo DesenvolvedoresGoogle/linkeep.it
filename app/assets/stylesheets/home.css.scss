@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content{
-	padding: 10px;
-}
-
 a{
 	&:hover {
 		color: #81A8B8 !important;	
@@ -31,9 +27,14 @@ a{
 		float: left;
 	}
 	span{
-		font-size: 1.4em;
 		padding-left: 6px;
 	}
+}
+
+.glyphicon {
+	font-size: 1.4em;
+
+
 }
 
 .home {

@@ -4,33 +4,4 @@
 
 .links {
   background-color: #DBE6EC;
-
-  .link-list {
-
-    .link {
-      a {
-        padding: 2px;
-        background-color: #E8F3F8;
-        
-        &:hover{
-        }
-      }
-
-      background-color: #efefef;
-
-      .name {
-        color: #A4BCC2;
-      }
-
-      .url {
-      }
-    }
-    delete:hover{
-      color: red;
-    }
-  }
-
-  .tags {
-    background-color: red;
-  }
 }
