@@ -20,6 +20,8 @@ var requestLinks = function() {
 
       setData('links', links);
 
+      updateIcon();
+
       //linksLoaded = true;
       var event = new CustomEvent('links_loaded', {});
       window.dispatchEvent(event);
@@ -67,6 +69,24 @@ var signOut = function() {
     'name': 'access_token'
   });
 
+  updateIcon();
+
   var event = new CustomEvent('signed_out', {});
   dispatchEvent(event);
 };
+
+var updateIcon = function() {
+  var accessToken = localStorage.access_token;
+  var suffix = '';
+
+  if (!accessToken) {
+    suffix = '-off';
+  }
+
+  chrome.browserAction.setIcon({
+    'path': {
+      '19': 'images/logo19' + suffix +'.png',
+      '38': 'images/logo38' + suffix + '.png'
+    }
+  });
+}
