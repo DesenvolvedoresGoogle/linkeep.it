@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 
+gem 'grape'
+
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 

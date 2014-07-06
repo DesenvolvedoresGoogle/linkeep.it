@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
+  mount ApiRoot => '/'
+
   resources :links do
     member do
       get 'read'
