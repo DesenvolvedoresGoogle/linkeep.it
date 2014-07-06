@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :links
+  has_many :api_keys
 
   def self.from_omniauth auth
     where(auth.slice(:provider, :uid)).first_or_create do |user|

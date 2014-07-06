@@ -5,6 +5,14 @@ class OmniauthCallbacksController < ApplicationController
   def google_oauth2
     user = User.from_omniauth request.env['omniauth.auth']
     if user.persisted?
+      api_key = user.api_keys.build
+      api_key.save
+
+      cookies[:access_token] = {
+        value: api_key.access_token,
+        expires: api_key.expires_at
+      }
+
       flash.notice = 'Signed in using Google'
       sign_in_and_redirect user
     else
