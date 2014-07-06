@@ -1,32 +1,43 @@
-<div role:'form'>
-  <%= form_for(@link) do |f| %>
-    <% if @link.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+<div class='col-md-12'>
+  <div class='panel panel-default'>
+    <div class='panel-heading'>
+      <%= title %>
+    </div>
+    <div class='panel-body'>
+      <div role='form'>
+        <%= form_for(@link) do |f| %>
+          <% if @link.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
 
-        <ul>
-        <% @link.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+              <ul>
+              <% @link.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class='field form-group'>
+            <%= f.label :name %><br/>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :url %><br/>
+            <%= f.text_field :url %>
+          </div>
+          <div class='field form-group'>
+            <%= f.label :tag_list, 'Tags' %><br/>
+            <%= f.text_field :tag_list %>
+            <p class="help-block">tags must be separated by , or spaces.</p>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
         <% end %>
-        </ul>
       </div>
-    <% end %>
 
-    <div class='field form-group'>
-      <%= f.label :name %><br/>
-      <%= f.text_field :name %>
+      <%= link_to 'Back', links_path %>
     </div>
-    <div class="field form-group">
-      <%= f.label :url %><br/>
-      <%= f.text_field :url %>
-    </div>
-    <div class='field form-group'>
-      <%= f.label :tag_list, 'Tags' %><br/>
-      <%= f.text_field :tag_list %>
-      <p class="help-block">tags must be separated by , or spaces.</p>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
+  </div>
 </div>
